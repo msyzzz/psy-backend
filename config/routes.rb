@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :create, :update, :destroy]
   resources :tokens, only: [:create]
   resources :questionnaires
+  resources :results
 end
