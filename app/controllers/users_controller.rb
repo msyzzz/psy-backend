@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
   def index
     @users  = User.all
-    p current_user
     render json: {error_code:0, data:@users, message:'ok'}, status: 200
   end
 
