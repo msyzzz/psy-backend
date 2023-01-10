@@ -10,11 +10,6 @@ class ResultsController < ApplicationController
     render json: {error_code:0, data:@result, message:'ok'}, status: 200
   end
 
-  def get_list
-    @user = current_user
-    render json: {error_code:0, data:user.Result, message:"ok"}, status: 200
-  end
-
   def create
     @user = current_user
     @result = Result.new(result_params)
