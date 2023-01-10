@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment_data_begin: 2023-01-09 18:53:07
+  appointment_data_end: 2023-01-09 18:53:07
+  created_at: Time.current
+  updated_at: Time.current
+
+two:
+  appointment_data_begin: 2023-01-09 18:53:07
+  appointment_data_end: 2023-01-09 18:53:07
+  created_at: Time.current
+  updated_at: Time.current

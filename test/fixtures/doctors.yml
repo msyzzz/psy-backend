@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  introduction: MyText
+  legal_time: MyString
+  created_at: Time.current
+  updated_at: Time.current
+
+two:
+  introduction: MyText
+  legal_time: MyString
+  created_at: Time.current
+  updated_at: Time.current
