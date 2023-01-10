@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'chatbot/show'
+
+  post "/chatbot/create", to: "chatbot#create"
+
   get 'appointments/show'
 
   get 'appointments/new'

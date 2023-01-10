@@ -10,16 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230109105307) do
+ActiveRecord::Schema.define(version: 20230110102425) do
 
   create_table "appointments", force: :cascade do |t|
     t.string "appointment_date"
+    t.text "introduction"
     t.integer "user_id", null: false
     t.integer "doctor_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
+
+  create_table "chatbots", force: :cascade do |t|
+    t.string "content"
+    t.boolean "from_bot"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_chatbots_on_user_id"
   end
 
   create_table "doctors", force: :cascade do |t|
