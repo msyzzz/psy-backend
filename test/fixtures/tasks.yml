@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  testee_range: MyString
+  questionnaire_id: 1
+  doctor_id: 1
+  deadline: MyString
+  total: 1
+  finish: 1
+
+two:
+  name: MyString
+  testee_range: MyString
+  questionnaire_id: 1
+  doctor_id: 1
+  deadline: MyString
+  total: 1
+  finish: 1
