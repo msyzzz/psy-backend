@@ -10,7 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230107125204) do
+ActiveRecord::Schema.define(version: 20230111050213) do
+
+  create_table "doctors", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questionnaires", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "description", default: "", null: false
+    t.string "questions", default: "", null: false
+    t.string "results", default: "", null: false
+    t.integer "doctor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_questionnaires_on_name"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "questionnaire_id"
+    t.string "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.string "testee_range"
+    t.integer "questionnaire_id"
+    t.integer "doctor_id"
+    t.datetime "deadline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "index", limit: 100, default: "", null: false
@@ -19,6 +54,7 @@ ActiveRecord::Schema.define(version: 20230107125204) do
     t.integer "role", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "department"
     t.index ["index"], name: "index_users_on_index", unique: true
   end
 
