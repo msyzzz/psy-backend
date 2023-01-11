@@ -2,11 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   def index
-    @users  = User.all
-    render json: {error_code:0, data:@users, message:'ok'}, status: 200
+    @user = current_user
+    render json: {error_code:0, data:@user, message:'ok'}, status: 200
   end
 
   def show
+
     render json: {error_code:0, data:@user, message:'ok'}, status: 200
   end
 
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:index, :password, :name)
+    params.require(:user).permit(:index, :password, :name, :department)
   end
 
   def set_user
