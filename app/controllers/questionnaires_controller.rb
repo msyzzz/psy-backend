@@ -13,10 +13,12 @@ class QuestionnairesController < ApplicationController
   def create
     @user = current_user
     @questionnaire = Questionnaire.new(questionnaire_params)
+    p @questionnaire
     @questionnaire.doctor_id = @user.id
-    if @questionnaire.save && @user.save
+    if @questionnaire.save
       render json: {error_code:0, data:@questionnaire, message:'ok'}, status: 201
     else
+      p "false"
       render json: {error_code:500, message:@questionnaire.errors}, status: 201
     end
   end
@@ -36,7 +38,7 @@ class QuestionnairesController < ApplicationController
 
   private
   def questionnaire_params
-    params.require(:questionnaire).permit(:name, :description, :questions, :results)
+    params.require(:questionnaire).permit(:name, :description, :questions, :results, :question_number)
   end
 
   def set_questionnaire

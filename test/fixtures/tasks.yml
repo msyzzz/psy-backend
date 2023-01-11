@@ -5,11 +5,15 @@ one:
   testee_range: MyString
   questionnaire_id: 1
   doctor_id: 1
-  deadline: 2023-01-10 21:23:32
+  deadline: MyString
+  total: 1
+  finish: 1
 
 two:
   name: MyString
   testee_range: MyString
   questionnaire_id: 1
   doctor_id: 1
-  deadline: 2023-01-10 21:23:32
+  deadline: MyString
+  total: 1
+  finish: 1

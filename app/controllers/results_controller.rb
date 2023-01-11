@@ -12,8 +12,17 @@ class ResultsController < ApplicationController
 
   def create
     @user = current_user
-    @result = Result.new(result_params)
+    @result = Result.new
     @result.user = @user
+    @result.name = result_params["name"]
+    @result.questionnaire_id = result_params["questionnaire_id"]
+    @result.score = result_params["score"]
+    @questionnaire = Questionnaire.find_by_id(@result.questionnaire_id)
+    @score_range = @questionnaire.results
+    @ss = JSON.parse(@score_range)
+    p @ss
+    @result.details = "轻度焦虑"
+
     if @result.save && @user.save
       render json: {error_code:0, data:@result, message:'ok'}, status: 201
     else
@@ -36,7 +45,7 @@ class ResultsController < ApplicationController
 
   private
   def result_params
-    params.require(:result).permit(:questionnaire_id, :details)
+    params.require(:result).permit(:questionnaire_id, :score, :name)
   end
 
   def set_result

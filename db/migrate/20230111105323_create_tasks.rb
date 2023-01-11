@@ -5,7 +5,9 @@ class CreateTasks < ActiveRecord::Migration[5.1]
       t.string :testee_range
       t.integer :questionnaire_id
       t.integer :doctor_id
-      t.timestamp :deadline
+      t.string :deadline
+      t.integer :total
+      t.integer :finish
 
       t.timestamps
     end

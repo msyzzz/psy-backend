@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230111050213) do
+ActiveRecord::Schema.define(version: 20230111105323) do
 
   create_table "doctors", force: :cascade do |t|
     t.integer "user_id"
@@ -26,13 +26,16 @@ ActiveRecord::Schema.define(version: 20230111050213) do
     t.integer "doctor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "question_number"
     t.index ["name"], name: "index_questionnaires_on_name"
   end
 
   create_table "results", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "questionnaire_id"
+    t.string "name"
+    t.integer "score"
     t.string "details"
+    t.integer "questionnaire_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,7 +45,9 @@ ActiveRecord::Schema.define(version: 20230111050213) do
     t.string "testee_range"
     t.integer "questionnaire_id"
     t.integer "doctor_id"
-    t.datetime "deadline"
+    t.string "deadline"
+    t.integer "total"
+    t.integer "finish"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

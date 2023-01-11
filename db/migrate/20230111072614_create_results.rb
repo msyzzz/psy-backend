@@ -1,9 +1,11 @@
 class CreateResults < ActiveRecord::Migration[5.1]
   def change
     create_table :results do |t|
-      t.integer :user_id
-      t.integer :questionnaire_id
+      t.string :name
+      t.integer :score
       t.string :details
+      t.integer :questionnaire_id
+      t.integer :user_id
 
       t.timestamps
     end

@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
-  questionnaire_id: 1
+  name: MyString
+  score: 1
   details: MyString
+  questionnaire_id: 1
+  user_id: 1
 
 two:
-  user_id: 1
-  questionnaire_id: 1
+  name: MyString
+  score: 1
   details: MyString
+  questionnaire_id: 1
+  user_id: 1
